@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scripts/platformer_test_level_JZ.gd" type="Script" id=1]
+[ext_resource path="res://Assets/sky1.png" type="Texture" id=2]
+[ext_resource path="res://Assets/basic_jungle_tile.tres" type="TileSet" id=3]
+[ext_resource path="res://Assets/plant.png" type="Texture" id=4]
+[ext_resource path="res://Assets/tent.png" type="Texture" id=5]
+[ext_resource path="res://Assets/trees.png" type="Texture" id=6]
+
+[node name="platformer test level" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.5, 0.5 )
+
+[node name="sky_background" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 2262.13, 215.569 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 12000, 2000, 12000, 2000 )
+
+[node name="plants" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="plant1" type="Sprite" parent="ParallaxBackground/plants"]
+position = Vector2( 65, 494 )
+texture = ExtResource( 4 )
+
+[node name="plant2" type="Sprite" parent="ParallaxBackground/plants"]
+position = Vector2( 27, 502 )
+texture = ExtResource( 4 )
+flip_h = true
+
+[node name="tree" type="Sprite" parent="ParallaxBackground/plants"]
+position = Vector2( 39.5, 442 )
+scale = Vector2( 1.13542, 1.27907 )
+texture = ExtResource( 6 )
+
+[node name="tent" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="tent" type="Sprite" parent="ParallaxBackground/tent"]
+position = Vector2( 135, 476 )
+texture = ExtResource( 5 )
+flip_h = true
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+format = 1
+tile_data = PoolIntArray( 262158, 0, 0, 262159, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 524300, 0, 0, 524301, 0, 0, 524302, 0, 0, 524303, 0, 0 )
+
+[node name="chest2_dg" type="Sprite" parent="."]

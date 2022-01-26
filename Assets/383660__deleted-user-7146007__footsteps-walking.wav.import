@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/383660__deleted-user-7146007__footsteps-walking.wav-c9879a3dd94c8a344e1cf4eb3d8eeb53.sample"
+
+[deps]
+
+source_file="res://Assets/383660__deleted-user-7146007__footsteps-walking.wav"
+dest_files=[ "res://.import/383660__deleted-user-7146007__footsteps-walking.wav-c9879a3dd94c8a344e1cf4eb3d8eeb53.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

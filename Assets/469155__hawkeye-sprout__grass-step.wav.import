@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/469155__hawkeye-sprout__grass-step.wav-d07876c84aadfdc9f5b3940dacdd3abf.sample"
+
+[deps]
+
+source_file="res://Assets/469155__hawkeye-sprout__grass-step.wav"
+dest_files=[ "res://.import/469155__hawkeye-sprout__grass-step.wav-d07876c84aadfdc9f5b3940dacdd3abf.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,78 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Assets/shipsMiscellaneous_sheet.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/enemyship_GB.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/e_shmup_cannonball_GB.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/cannon_fire_1.wav" type="AudioStream" id=4]
+[ext_resource path="res://Assets/cannon_fire_2.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/cannon_fire_3.wav" type="AudioStream" id=6]
+[ext_resource path="res://Scenes/health_board.tscn" type="PackedScene" id=7]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 19.5661
+height = 64.0143
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 19.1695
+height = 64.0143
+
+[node name="enemyship_GB" type="KinematicBody2D" groups=[
+"enemy",
+]]
+script = ExtResource( 2 )
+bullet = ExtResource( 3 )
+hpack_s = ExtResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 408, 115, 66, 113 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=[
+"enemy",
+]]
+shape = SubResource( 1 )
+
+[node name="shot_timer" type="Timer" parent="."]
+wait_time = 2.66
+autostart = true
+
+[node name="cannon1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -10.0
+pitch_scale = 0.5
+bus = "Effects"
+
+[node name="cannon2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -10.0
+pitch_scale = 0.5
+bus = "Effects"
+
+[node name="cannon3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -10.0
+pitch_scale = 0.5
+bus = "Effects"
+
+[node name="shot_pivot" type="Position2D" parent="."]
+
+[node name="shot_pos" type="Position2D" parent="shot_pivot"]
+position = Vector2( 60, 0 )
+rotation = -1.5708
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 2 )
+
+[node name="Health1" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 272, 345, 66, 113 )
+[connection signal="timeout" from="shot_timer" to="." method="_on_shot_timer_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]

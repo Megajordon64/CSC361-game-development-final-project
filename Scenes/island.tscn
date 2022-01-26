@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/tiles_sheet.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 93, 92 )
+
+[node name="island" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 192, 193 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite2" type="Sprite" parent="Sprite"]
+position = Vector2( -33, -37 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 69, 265, 54, 46 )
+
+[node name="Sprite3" type="Sprite" parent="Sprite"]
+position = Vector2( 41, 27 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 330, 269, 44, 38 )
+
+[node name="Sprite4" type="Sprite" parent="Sprite"]
+position = Vector2( -19, 21 )
+rotation = 2.35619
+scale = Vector2( 1.05, 1.05 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 456, 335, 43, 40 )
+
+[node name="Sprite" type="Sprite" parent="Sprite"]
+position = Vector2( 33, -38 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 408, 346, 16, 12 )
+
+[node name="Area2D" type="Area2D" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )

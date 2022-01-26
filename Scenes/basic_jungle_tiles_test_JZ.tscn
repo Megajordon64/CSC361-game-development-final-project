@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/tile_jungle_ground_brown.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 31.9758, 15.7916 )
+
+[node name="basic_jungle_tiles" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 1.89344, 1.48123 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 30, 30, 64, 30 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite"]
+position = Vector2( 18.9151, 18.9151 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( 13.0907, -3.42962 )
+shape = SubResource( 1 )

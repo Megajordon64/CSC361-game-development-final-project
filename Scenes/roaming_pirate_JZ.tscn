@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/bluepirate.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/roaming_pirate_JZ.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 16, 25.5 )
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 192, 48, 64 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 48, 192, 48, 64 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 96, 192, 48, 64 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="roaming_pirate_JZ" type="KinematicBody2D" groups=[
+"hazard",
+]]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=[
+"hazard",
+]]
+shape = SubResource( 5 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." groups=[
+"hazard",
+]]
+position = Vector2( -2, -5 )
+frames = SubResource( 4 )
+playing = true
+
+[node name="Timer" type="Timer" parent="." groups=[
+"hazard",
+]]
+wait_time = 3.0
+autostart = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

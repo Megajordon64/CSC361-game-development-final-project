@@ -1,0 +1,105 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Return_to_Menu_JZ.gd" type="Script" id=1]
+
+[node name="credits_JZ" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_top = 0.008
+anchor_right = 0.491
+anchor_bottom = 0.983
+margin_top = 0.2
+margin_right = 0.215973
+margin_bottom = 0.199951
+text = "links to all assets used in game's production
+
+https://opengameart.org/content/pirate-pack-190
+
+https://opengameart.org/content/sailors-pirates
+
+https://opengameart.org/content/black-sail-ship-bleeds-game-art
+
+https://opengameart.org/content/gold-treasure-icons-16x16
+
+https://opengameart.org/content/blackmoor-tides-epic-pirate-battle-theme
+
+https://opengameart.org/content/sea-and-underwater-assets
+
+https://opengameart.org/content/miscellaneous-octopi
+
+https://opengameart.org/content/basic-boulder
+
+https://opengameart.org/content/db32-cave-tileset
+
+https://opengameart.org/content/spikes-32x32
+
+https://opengameart.org/content/opp2017-jungle-and-temple-set
+
+https://opengameart.org/content/basic-cannon-hd
+
+https://opengameart.org/content/cannonball
+
+https://opengameart.org/content/sky-backdrop
+
+https://freesound.org/people/deleted_user_7146007/sounds/383660/
+
+https://freesound.org/people/Kastenfrosch/sounds/162455/
+
+https://freesound.org/people/jeckkech/sounds/391660/
+
+https://freesound.org/people/Hawkeye_Sprout/sounds/469155/
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+anchor_left = 0.584
+anchor_top = 0.005
+anchor_right = 1.0
+anchor_bottom = 0.545
+margin_left = -0.0160522
+margin_top = -2.38419e-07
+margin_right = -2.0
+text = "game developed by:
+Geoffrey Browell
+Dylan Groshens
+Jordon Zeigler
+
+shoot em up sections:
+Geoffrey Browell
+
+platforming sections:
+Dylan Groshens
+Jordon Zeigler
+
+Main menu:
+Geoffrey Browell
+Dylan Groshens
+
+options:
+Dylan Groshens
+
+credits:
+Jordon Zeigler"
+
+[node name="Return_to_Menu_JZ" type="Button" parent="."]
+anchor_left = 0.583
+anchor_top = 0.695
+anchor_right = 0.829
+anchor_bottom = 0.842
+margin_left = 0.00799561
+margin_top = -3.05176e-05
+margin_right = 0.103943
+margin_bottom = -0.200043
+text = "return to main menu"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Return_to_Menu_JZ" to="Return_to_Menu_JZ" method="_on_Return_to_Menu_JZ_pressed"]

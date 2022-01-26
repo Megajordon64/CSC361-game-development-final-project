@@ -1,0 +1,82 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/letter_a.png" type="Texture" id=1]
+[ext_resource path="res://Assets/letter_d.png" type="Texture" id=2]
+[ext_resource path="res://Assets/space.png" type="Texture" id=3]
+[ext_resource path="res://Assets/chest_closed.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/Button2_dg.gd" type="Script" id=5]
+
+[node name="instructions_dg" type="Node2D"]
+
+[node name="a" type="Sprite" parent="."]
+position = Vector2( 353, 161.556 )
+scale = Vector2( 0.095, 0.095 )
+texture = ExtResource( 1 )
+
+[node name="chest" type="Sprite" parent="."]
+position = Vector2( 353.944, 358.826 )
+scale = Vector2( 0.92089, 0.773409 )
+texture = ExtResource( 4 )
+
+[node name="d" type="Sprite" parent="."]
+position = Vector2( 353.953, 220.395 )
+scale = Vector2( 0.095, 0.095 )
+texture = ExtResource( 2 )
+
+[node name="space" type="Sprite" parent="."]
+position = Vector2( 348.29, 290.241 )
+scale = Vector2( 0.382317, 0.333348 )
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 385.0
+margin_top = 152.0
+margin_right = 553.0
+margin_bottom = 192.0
+text = "to move left"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 410.485
+margin_top = 281.311
+margin_right = 578.485
+margin_bottom = 321.311
+text = "to jump"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 385.0
+margin_top = 213.352
+margin_right = 553.0
+margin_bottom = 253.352
+text = "to move right
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="."]
+margin_left = 393.495
+margin_top = 352.101
+margin_right = 561.495
+margin_bottom = 392.101
+text = "to win"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 409.643
+margin_top = 428.52
+margin_right = 582.643
+margin_bottom = 496.52
+text = "Back to Main Menu"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]

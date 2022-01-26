@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/bluepirate.png" type="Texture" id=1]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 64, 48, 64 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 48, 64, 48, 64 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 96, 64, 48, 64 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ],
+"loop": true,
+"name": "bluepirate",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=5]
+
+[node name="bluepirate_dg" type="KinematicBody2D" groups=[
+"hazard",
+]]
+position = Vector2( 1005, 470 )
+scale = Vector2( 1.243, 1.274 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." groups=[
+"hazard",
+]]
+frames = SubResource( 4 )
+animation = "bluepirate"
+frame = 2
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=[
+"hazard",
+]]
+position = Vector2( 0, 5 )
+scale = Vector2( 1.734, 2.592 )
+shape = SubResource( 5 )
